@@ -1,0 +1,108 @@
+@import './variable';
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+
+
+    @include sm {
+        width: 100%;
+    }
+    .movie_posters {
+        display: flex;
+        background-color: white;
+        margin-top: 5rem;
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        &_left {
+            display: flex;
+            padding-right: 2rem;
+
+            @include sm {
+                padding-right: 0;
+                padding-bottom: 2rem;
+            }
+
+            img {
+                object-fit: contain;
+                max-height: 25rem;
+                margin-right: 2rem;
+                background-color: black;
+
+                @include sm {
+                    max-width: 100%;
+                    margin-right: 0;
+                }
+
+            }
+
+
+        }
+
+        &_right {
+            display: flex;
+            flex-direction: column;
+            max-height: 25rem;
+            justify-content: center;
+
+            @include sm {
+                padding: 0 1rem;
+            }
+
+            > * {
+                padding-bottom: 1.1rem;
+            }
+
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+
+            button {
+                display: flex;
+                justify-content: center;
+                border: none;
+                outline: none;
+                background-color: $color-black;
+                padding: 1rem 0;
+                width: 16rem;
+                color: $color-white;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &_genres {
+                display: flex;
+
+                > * {
+                    padding-right: 1rem;
+
+                }
+
+                h1 {
+                    font-weight: 600;
+                    font-size: 1.3rem;
+                }
+
+                p {
+                    color: $color-black;
+                    opacity: .8;
+                }
+            }
+        }
+    }
+
+}

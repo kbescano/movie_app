@@ -1,0 +1,54 @@
+@import './variable';
+
+.row {
+    margin-top: 6rem;
+    margin-left: 20px;
+    margin-bottom: 5rem;
+    color: #fff;
+
+    h2 {
+        margin: 1.5rem 0;
+        font-size: 2rem;
+        color: $color-black;
+    }
+
+    .row_posters {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        padding: 1rem 0;
+
+
+        &_container {
+            display: flex;
+            flex-direction: column;
+
+
+            img {
+                object-fit: contain;
+                max-height: 150px;
+                transition-delay: 100ms;
+                margin-right: 10px;
+                background-color: black;
+
+                &:hover {
+                    transform: scale(1.08);
+                    cursor: pointer;
+                }
+            }
+
+            h1 {
+                color: $color-black;
+                margin: 0.5rem 0;
+                font-size: 1rem;
+            }
+
+
+        }
+    }
+
+}

@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import './styles/main.css'
+import HomeScreen from './pages/HomeScreen'
+import MovieSearch from './pages/MovieSearch'
+import MovieScreen from './pages/MovieScreen'
 
-function App() {
+import { GlobalProvider } from "./context/GlobalState";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <Router>
+        <Switch>
+          <Route path='/' component={HomeScreen} exact />
+          <Route path='/movies' component={MovieSearch} exact />
+          <Route path='/movies/search/:keyword' component={MovieSearch} exact />
+          <Route path='/movies/:id' component={MovieScreen} />
+        </Switch>
+      </Router>
+    </GlobalProvider>
   );
 }
 

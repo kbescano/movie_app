@@ -1,0 +1,41 @@
+@import './variable';
+
+.searchBox {
+    display: flex;
+
+    input {
+        display: flex;
+        justify-content: center;
+        border-radius: 0.5rem 0 0 0.5rem;
+        outline: none;
+        border: none;
+        border: 1px solid rgba($color: $color-blue, $alpha: 0.05);
+        padding: 1rem 2rem;
+
+        @include sm {
+            padding: 0.5rem;
+        }
+    }
+
+    button {
+        padding: 0 1em;
+        cursor: pointer;
+        outline: none;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: 1px solid rgba($color: $color-blue, $alpha: 0.05);
+        color: $color-black;
+        background-color: $color-white;
+
+        i {
+            font-size: 1.5rem;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        @include sm {
+            margin-right: 1.2rem;
+        }
+    }
+}
